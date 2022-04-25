@@ -1,0 +1,1981 @@
+\documentclass[letterpaper,12pt,oneside]{book}
+%\usepackage[a4paper,includeall,bindingoffset=0cm,margin=2cm,marginparsep=0cm,marginparwidth=0cm]{geometry}
+\usepackage[top=1in, left=3.5cm, right=2.5cm, bottom=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot,es-tabla]{babel}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tocloft}
+\usepackage{setspace}
+\usepackage{comment}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{listings}
+\usepackage{xcolor}
+
+
+
+%Para formato del codigo
+
+\definecolor{codegreen}{rgb}{0.58,0,0.82}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0,0.5,0}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+%%%%
+
+
+
+\setlength{\parindent}{0cm} %sangrias
+\urlstyle{same}
+\hypersetup{
+   colorlinks=true,
+   urlcolor=cyan,
+   linkcolor=black,
+   citecolor=black,
+   filecolor=magenta,
+   pdftitle={Sharelatex Example},
+}
+\usepackage[natbibapa]{apacite}
+
+\title{Proyecto de investigación}
+\author{Luis Alberto Rueda Tapia}
+\date{17 de septiembre del 2022}
+
+\begin{document}
+
+\begin{titlepage}
+  \thispagestyle{empty}
+  \begin{minipage}[c][0.17\textheight][c]{0.25\textwidth}
+    \begin{center}
+      \includegraphics[ height=3cm]{Images/logo-ipn.png}
+    \end{center}
+  \end{minipage}
+  \begin{minipage}[c][0.195\textheight][t]{0.75\textwidth}
+    \begin{center}
+      \vspace{0.3cm}
+             {\color{red}\textsc{\large Instituto Politécnico Nacional} }\\[0.5cm]
+             \vspace{0.3cm}
+                    {\color{purple}\hrule height2.5pt}
+                    \vspace{.2cm}
+                           {\color{purple}\hrule height1pt}
+                           \vspace{.8cm}
+                           \textsc{Escuela Superior de Economía}\\[1cm] %
+    \end{center}
+  \end{minipage}
+  \begin{minipage}[c][0.81\textheight][t]{0.25\textwidth}
+    \vspace*{5mm}
+    \begin{center}
+      \hskip2.0mm
+             {\color{red}\vrule width1pt height13cm }
+             \vspace{5mm}
+             \hskip2pt
+                 {\color{red}\vrule width2.5pt height13cm}
+                 \hskip2mm
+                     {\color{red}\vrule width1pt height13cm} \\
+                     \vspace{5mm}
+                     \includegraphics[height=3.0cm]{Images/ese.png}
+    \end{center}
+  \end{minipage}
+  \begin{minipage}[c][0.81\textheight][t]{0.75\textwidth}
+    \begin{center}
+      \vspace{1cm}
+
+      {\color{red}{\large\scshape Información asimétrica: Una aplicación de redes neuronales en México. 2015-2022. }}\\[.2in]
+
+      \vspace{2cm}            
+
+      %\textsc{\LARGE T\hspace{0.5cm}E\hspace{0.5cm}S\hspace{0.5cm}I\hspace{0.5cm}S}\\[2cm]
+
+      \textsc{\large proyecto de investigación}\\[2cm]
+      \textsc{\large para obtener el título de:}\\[0.5cm]
+      \textsc{\large licenciado en economía}\\[0.5cm]
+      
+      {\color{red}\textsc{\large presenta:}}\\[0.5cm]
+      \textsc{\large {Rueda Tapia Luis Alberto}}\\[1cm]          
+
+      \vspace{0.5cm}
+
+      {\large\scshape 
+        {\color{red}Tutores:}\\[0.3cm] {DR. Xxxxxxx Sxxxxx \\ 
+          Dr. XXXXXxxx XXxxxx}}\\[.2in]
+
+      \vspace{1cm}
+
+      \large{Estados Unidos Mexicanos\\ 
+        Ciudad de México\\
+        2022}
+    \end{center}
+  \end{minipage}
+\end{titlepage}
+
+\frontmatter
+\chapter*{Introducción}
+Este documento tiene como finalidad hacer una exposición
+sobre la herramienta de google ''Google trends'' y su aplicación
+en el campo de las finanzas.
+Si bien las criptomonedas son activos de alta volatilidad sensibles
+a las noticias en el mercado y su valor radica en su mayoria en la especulación,
+el buscador de google puede ser una de las herramientas mas importantes para
+conocer los intereses de las personas en el mercado actual.
+
+La utilización de google trend no es un tema nuevo en la modelación de activos
+financieros. Sin embargo, para este análisis también se utilizarán indicadores de análisis técnico ademas de algoritmos de inteligencia artificial esto con el propósito de ir mas allá y no quedarse con modelos convencionales para el pronostico de activos financieros.
+
+\newpage
+
+\tableofcontents
+\chapter{Glosario}
+
+
+
+
+\chapter{Planteamiento del problema}
+La investigación tiene como finalidad hacer un análisis histórico del comportamiento del mercado bursátil, las fallas existentes en el mismo y la aplicación de métodos computacionales con el fin de reducir la asimetría en la información inherente del sistema de mercado.
+    \section*{Delimitación}
+Se utilizarán datos históricos disponibles a partir del 2015 hasta 2022 de las acciones que coticen en la BMV (Bolsa Mexicana de valores).    
+    
+	\section*{Hipótesis}
+Las redes neuronales son un mecanismo que puede emplearse para el pronóstico de activos financieros en gran volumen y por lo tanto reducir la brecha existente en la información asimétrica en el mercado.
+    \section*{Objetivos.}       
+        \subsection*{Objetivo general.}
+Comprobar si los métodos computaciones actuales pueden ayudar a reducir el problema de información asimétrica en el mercado de valores.   
+        \subsection*{Objetivos particulares.}
+        \begin{itemize}
+            \item Investigar las problemáticas que genera la asimetría de la información en el mercado bursátil.
+            \item Identificar las fallas más representativas del mercado y el papel que jugo la información asimétrica.
+            \item Investigar como los inversionistas actuales tratan de disminuir el problema de información asimétrica.
+        \end{itemize}
+    
+  
+
+    
+    \section*{Justificación.}
+
+La investigación surge debido al avance de los métodos computacionales y de la información disponible, además del aumento en la capacidad de procesamiento de información de los computadores actuales que ponen al alcance la posibilidad de hacer un análisis mucho más grande del mercado financiero y de esta manera intentar subyugar la asimetría en la información existente en el mismo.
+
+El periodo de estudio se establece con el fin de contar con suficientes datos diarios para la calibración de la red neuronal además de que se eligió el sistema bursátil mexicano por la falta de documentos especializados en el tema.
+    
+
+
+\mainmatter
+\chapter{Marco teórico}
+
+\section{Antecedentes.}
+
+\subsection{Los espíritus animales}
+
+\cite{a11} define como los espíritus animales como una acción en la que el individuo actuaba de forma imprecisa, emocional e intuitiva, influyendo en la evolución de la economía. 
+En su libro ''Teoría general de la ocupación, el interés y el dinero'' \cite{a12} nos habla sobre la irracionalidad que tenemos los seres humanos en nuestra forma de actuar dentro de los mercados financieros generando principalmente expectativas de largo plazo tomando en cuenta solamente el la situación actual de los activos.
+
+De igual forma dentro de su critica a los mercados financieros nos habla sobre el problema que implica la liquidez de los mercados financieros.
+
+Los compromisos a largo plazo se fraccionan en el momento en que el mercado secundario entra en juego, por lo que la re evaluación de los activos es constante lo que aumenta la incertidumbre y la volatilidad en los precios.
+
+Bajo la hipótesis de mercados eficientes los precios serán el reflejo real de todos los efectos inherentes en el mercado. Keynes critica esta postura ya que la fluctuación de los precios estaría dada también por agentes irracionales\footnote{Espíritus animales.} que carecen de un análisis y por lo tanto su visión irracional de los precios crearía una disrupción en los mismos sobre-valuandolos o infra-valorandolos ya que si bien los precios contemplan las expectativas estos tienen un valor intrínseco.
+
+En palabras de \cite{a12}:
+
+\textit{''Los resultados efectivos de una inversión a largo número de años rara vez coinciden con las expectativas originales. Tampoco podemos racionalizar nuestra conducta argumentando que para un hombre ignorante los errores en cualquier sentido son igualmente probables, de tal manera que subsiste una previsión actuarial media basada en igualdad de probabilidades; porque fácilmente puede demostrarse que el supuesto de la posibilidad''}
+
+En otras palabras la probabilidad de acierto y error en los pronósticos sobre los activos financieros varia bastante si tomamos en cuenta la cantidad de información disponible y la profundidad del análisis que se hace sobre el potencial del activo en cuestión.
+
+\cite{a12} identifica algunas de las fragilidades principales que enfrenta el sector financiero como lo son.
+
+\begin{itemize}
+
+\item El tamaño del sistema financiero y la posibilidad de que sectores del mismo puedan ser dirigidos por personas que no tienen conocimientos suficientes sobre la complejidad del mismo.
+
+\item La situación de que el análisis de rendimientos llegue a tener una influencia absurda en la valoración de los activos.
+
+\item La valoración colectiva que surge cuando las decisiones la toman en su gran mayoría individuos ignorantes.
+
+\item La incapacidad de los analistas profesionales para poder fungir como una especie de guía para aquellos con menos conocimientos debido a la complejidad de los temas y a los costos que en algunos casos se tienen que cubrir.
+
+\item La persecución del fetiche de la liquidez.
+
+\item La confianza de las instituciones bancarias en inversionistas ya que no toman en cuenta su nivel de análisis para su toma de decisiones.
+
+\item La confianza de las instituciones bancarias en inversionistas ya que no toman en cuenta su nivel de análisis para su toma de decisiones.
+
+\end{itemize}
+
+
+
+Esto nos hace pensar en palabras de \cite{a12} si las actividades de desarrollo de capital de un país se convierten en un subproducto de las actividades propias de un casino y si el exceso de liquidez en el mercado en verdad propicia el curso hacia nuevas inversiones mas atractivas. 
+
+
+
+\subsection{Los mercados eficientes.}
+La hipótesis de los mercados eficientes radica en la concepción de que los precios de los activos reflejar en su mayoría el valor real o intrínseco del activo. \cite{a0}.
+
+Otra definición la encontramos por \cite{a1} y \cite{a2},
+que nos dicen que “A un mercado en el cual los precios siempre reflejen completamente la información disponible se le llama eficiente”.
+
+
+La concepción de eficiencia en los mercados ha sido tomada por autores como \cite{a5} y \cite{a4} para descalificar la intervención gubernamental en el mercado ya que su función estabilizadora lo que en verdad haría seria provocar distorsiones entre los precios reales de los activos.
+
+Y en contra parte solo por tomar un par, autores como \cite{a6} descalifican totalmente esta idea tomando como el papel no solo como necesario si no fundamental en el mercado.
+
+
+Desde otros puntos de vista existen aquellos como \cite{a7} que diferencia eficiencia en un mercado y la asignación optima de recursos como términos separados ya que la eficiencia en un mercado en su forma fuerte no conllevaría a una asignación totalmente optima de los recursos en el sentido de Pareto.
+
+
+%Esta idea de eficiencia en el mercado ha sido un tema de bastante controversia desde su la primera aparición en\footnote{Agregar}.
+
+Y por lo tanto ha estado sujeto a controversias como las de \cite{a1}, \cite{a8}, \cite{a4}, \cite{a9}, entre otros.
+
+Por lo que la definición de eficiencia en los mercados ha dejado de ser tan rígida y se ha adaptado a distintos niveles que se pueden adaptar mas a la realidad.
+
+\cite{a2} dividió el termino de ''Eficiencia de mercado'' en tres categorías.
+
+\begin{itemize}
+
+\item Eficiencia del mercado en su forma débil
+
+\item Eficiencia del mercado en su forma semi-fuerte
+
+\item Eficiencia del mercado en su forma fuerte 
+
+\end{itemize}
+
+Para \cite{a10}, una buena serie de indicadores para medir la eficiencia en un mercado radica en que que estos deberian cumplir al menos los siguientes supuestos.
+
+No deben existir costos de negociación de los valores.
+
+Toda la información disponible debe ser disponible sin costo para todos los participantes del mercado.
+
+Todos deben estar de acuerdo en las implicaciones de la actual información para el precio actual y en las distribuciones de los precios futuros de cada valor.
+
+
+Dadas estas condiciones \cite{a6} Indican la imposibilidad de eficiencia en los mercados eficientes por la vía informaciona.
+
+Ya que la información en el mercado no se distribuye de manera uniforme ademas de la imposibilidad del publico general para hacer análisis complejos de los activos. A este problema es lo que hoy en día llamamos información asimétrica.
+
+Si bien esto se vera mas adelante el nivel de información disponible tiene un papel fundamental en el comportamiento de los individuos que se regirán por la calidad y la cantidad de la misma en lo que \cite{a11} definiría como ''Espiritus animales''.
+
+
+
+\subsection{El problema de la información.}
+
+Si bien el concepto de eficiencia en los mercados se puede abordar de manera generalizada hacia cualquiera independientemente del giro que maneje, la investigación se centra en el mercado de activos de renta variable esto se indica para poder precisar el problema de información que recibe este mercado.
+
+Actualmente si bien la calidad de información disponible para hacer análisis no es del todo abundante, el avance de las tecnologías de la información han logrado crear un acervo información inmenso acerca de los gustos y las preferencia de los usuarios de los mismos.
+
+Creando un nuevo problema, la sobre-informacion.
+
+\cite{b1} ejemplifican parte de este problema:
+
+
+Dado que la información que llega al mercado es abundante, y que en todo momento los precios absorven tal información si algun echo del mañana no se ha reflejado en los precios del hoy. Es por que su materealización depende del azar o porque es desconocido por todos. Si un mercado de capitales es eficiente, será imposible predecir sistemáticamente los precios de los activos que se transan en su interior y, por tanto, obtener ganancias no acotadas sistemáticamente con base en tales activos, siguiendo cualquier tipo de técnica de predicción o haciendo uso de cualquier conjunto de información. El mejor pronóstico del precio mañana será el precio de hoy, el cual corresponde a la suma descontada de los flujos futuros infinitos, representados por la tenencia del activo financiero para su poseedor.
+
+
+Por otro lado, considerando que el mercado de capitales a tomar en cuenta no cumpliera con el concepto de eficiencia en su forma fuerte y si una eficiencia en su forma semi-fuerte de todas formas se tendría que lidiar con el problema que conlleva el nivel inmenso de información disponible para tomar decisiones.
+
+Considerando las palabras de Uribe y Ulloa, tomando el impacto de la información en los precios como un aventó de azar. Esto podría diferir dependiendo de la calidad de la información.
+
+
+Por ello valdría la pena evaluar el comportamiento de información relevante para los activos financieros (como son los indicadores de análisis técnico e indicadores de análisis fundamental) y comprobar si de alguna manera estos impactan en la valorización de los activos.
+
+
+
+\subsection{El papel de los intermediarios financieros.}
+\cite{c2} definen a los intermediarios financieros como un agente económico que se especializa en en las actividades de compra y venta simultáneamente de derechos financieros.
+
+La existencia de los intermediarios financieros radica en la especialización de las tareas que cada uno de ellos ejerce y de esta manera se reducen los costos de transacción que se darían de que un solo banco se encargara de todas las actividades especializadas (Compra y venta de acciones, bonos, derivados, títulos de deuda, pagares bancarios, etc.)
+
+En un mundo con mercados financieros sin fricciones y con información perfecta los intermediarios financieros no tendrían razón de existencia ya que los costos adicionales serian nulos por el conocimiento general de los activos y esto traería a una diversificación perfecta del riesgo tanto de inversores como de prestatarios. \cite{c1} opina sobre el papel especial de las aseguradores como intermediarios financieros ya que estas se encargar de mutualizar los riesgos inherentes en el mercado alcanzo un nivel de riesgo optimo.
+
+Para Freixas y Rocket el tema de los intermediarios financieros es muy importante ya que en su opinión las asimétrica de la información representan forman especificas de costos de transacción, ya sea ex ante (selección adversa), inmediata (riesgo moral) o ex post (verificación estatal costosa).
+
+
+
+\subsection{Expectativas racionales.}
+
+\subsection{Expectativas adaptativas.}
+
+
+\chapter{Utilización de modelos para el pronostico de activos financieros.}
+
+\section{Redes neuronales}
+
+\section{Redes neuronales en el pronostico de series financieras.}
+
+\section{Indicadores de análisis técnico.}
+
+\chapter{Investigación:}
+\section*{Redes neuronales aplicadas a el pronostico de tendencias para activos financieros en el mercado mexicano.}
+
+
+\section{Creación de indicadores de análisis técnico y analisis del IPC BMV}
+La posibilidad de hacer este tipo de análisis en muchos casos radica en la capacidad técnica del investigador por lo que de antemano pido una disculpa en las fallas que pudieran existir y del equipo y sistema que utilizo para el mismo por lo que vale la pena especificar el mismo ya que los resultados podrian variar si se intenta replicar.
+
+Esta investigación se hizo utilizando el software Python en su versión 3.9.9 con un equipo con las siguientes especificaciones.
+
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[ height=5cm]{Images/Sistema.jpg}
+	\caption{Descripción técnica del equipo.}
+\end{figure}
+
+
+Para la primera fase por default Python no cuenta con las caracteristicas necesarias para computar series de tiempo por lo que se tendran que importar librerias de terceros\footnote{Se utilizaron  las versiones mas recientes hasta el 1ro de Enero del 2022 con la función \textit{pip install}.}
+
+\begin{lstlisting}[language=Python]
+import numpy as np 
+import pandas as pd 
+import matplotlib.pyplot as plt
+import yfinance as yf
+\end{lstlisting}
+
+Una dedscripcion breve de las librerias seria la siguiente:
+\vspace{0.5cm}
+
+Numpy: Es el paquete fundamental para la computación científica en Python. Es una biblioteca de Python que proporciona un objeto de matriz multidimensional, varios objetos derivados (como matrices y matrices enmascaradas) y una variedad de rutinas para operaciones rápidas en matrices, que incluyen manipulación matemática, lógica, de formas, clasificación, selección, E/S. , transformadas discretas de Fourier, álgebra lineal básica, operaciones estadísticas básicas, simulación aleatoria y mucho más. \footnote{\url{https://numpy.org/doc/stable/}}
+\vspace{0.5cm}
+
+Pandas: Pretende ser el bloque de construcción fundamental de alto nivel para realizar análisis prácticos de datos del mundo real en Python. Además, tiene el objetivo más amplio de convertirse en la herramienta de manipulación/análisis de datos de código abierto más poderosa y flexible disponible en cualquier idioma. \footnote{\url{https://pandas.pydata.org/about/}}
+\vspace{0.5cm}
+
+Matplotlib: Es una colección de funciones que hacen que Matplotlib funcione como MATLAB. Cada función de pyplot realiza algún cambio en una figura: por ejemplo, crea una figura, crea un área de trazado en una figura, traza algunas líneas en un área de trazado, decora el trazado con etiquetas, etc. Pyplotestá destinado principalmente a tramas interactivas y casos simples de generación de tramas programáticas.\footnote{\url{https://matplotlib.org/stable/api/index.html\#}}
+\vspace{0.5cm}
+
+Yfinance: Es un paquete de python que nos permite obtener datos de mercado históricos de la API de Yahoo finance tomando los términos y las condiciones de la compañía.\footnote{\url{https://legal.yahoo.com/us/en/yahoo/terms/product-atos/apiforydn/index.html}}
+\vspace{0.5cm}
+
+
+
+Con la función download del la librería Yfinance importamos la serie histórica del IPC BMV que cotiza en yahoo finance con el ticker \textbf{\^ MXX} a partir del primero de enero del 2015 y dejando el intervalo a una fecha posterior cual sea en este caso el 25 de diciembre del 2030 de esta manera siempre nos proporcionara los datos mas recientes hasta esa fecha.
+
+\begin{lstlisting}[language=Python]
+df = yf.download(''^MXX'', start=''2015-01-01'',
+ end=''2030-12-25'',
+ group_by=''ticker'') 
+type(df)
+df
+\end{lstlisting}
+
+
+En la figura \ref{fig:m1} podemos observar el comportamiento que ha tenido el Indice de precios y cotizaciones de la Bolsa Mexicana de Valores del 2015 al ultimo dato disponible.
+
+\begin{lstlisting}[language=Python]
+plt.figure(figsize=(16,5))
+plt.plot(df[''Close''],label=''Trayectoria de la accion'')
+plt.title(''Historico: IPC BMV'')
+plt.xlabel(''2019-2020'')
+plt.ylabel(''Precio cierre'')
+plt.legend(loc= ''upper left'')
+plt.show
+\end{lstlisting}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[ height=5cm]{Images/output.png}
+	\caption{Historico IPC BMV}
+	\label{fig:m1}
+\end{figure}
+
+
+\subsection{Medias móviles}
+
+Las medias moviles se utilizan como metodo para reafirmar las tendencias en un activo, no obstante el periodo en el que se debe construir la media móvil es un tema de controversia.
+
+
+\begin{lstlisting}[language=Python]
+MVS30=pd.DataFrame()
+MVS30[''Close'']=df[''Close''].rolling(window=30).mean()
+MVS30
+\end{lstlisting}
+
+Ya que el análisis se hará utilizando datos diarios se utilizara una media móvil de 30 días para ver la tendencia mensual del activo y una media móvil de 100 días para revisar el comportamiento en el largo plazo.
+
+
+\begin{lstlisting}[language=Python]
+MVS100=pd.DataFrame()
+MVS100[''Close'']=df[''Close''].rolling(window=100).mean()
+MVS100
+\end{lstlisting}
+
+Las medias moviles se pueden observar en la figura \ref{fig:m2}\footnote{En el código el precio de cierre del activo se maneja como AMZN por que originalmente se utilizo el precio de cierre de Amazon.}
+
+
+\begin{lstlisting}[language=Python]
+plt.figure(figsize=(16,5))
+plt.plot(df[''Close''],label=''Amazon STOCK'')
+plt.plot(MVS30[''Close''],label= ''MVS30'')
+plt.plot(MVS100[''Close''],label= ''MVS100'')
+plt.title(''IPC BMV: Medias moviles'')
+plt.xlabel(''2019-2020'')
+plt.ylabel(''Precio de Close'')
+plt.legend(loc= ''upper left'')
+plt.show
+\end{lstlisting}
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[ height=5cm]{Images/output1.png}
+	\caption{Medias móviles}
+	\label{fig:m2}
+\end{figure}
+
+\begin{lstlisting}[language=Python]
+data=pd.DataFrame()
+data[''AMZN'']=df[''Close'']
+data[''MVS30'']=MVS30[''Close'']
+data[''MVS100'']=MVS100[''Close'']
+data
+\end{lstlisting}
+
+
+\subsubsection{Señales para medias móviles}
+
+La lectura para medias móviles mas acercada es que cuando la curva de largo plazo corta por abajo a la curva de corto plazo nos encontramos con una señal alcista. Dado el caso contrario nos encontraremos con una señal bajista.
+
+En \textbf{Python} se pueden definir funciones con la palabra \textbf{def}, se estable una variable de control llamada \textbf{condicion} y se verifica en que momento se cumple la condicion de que la curva de corto largo plazo corte a la de corto plazo por abajo y por arriba si se llegara a cumplir esta condición.
+
+Las señales aparecerán solo si un existe un cambio de tendencia (alcista o bajista). Si la curva de largo plazo corta a la de corto plazo en dos ocasiones seguidas en la misma posición (de abajo hacia arriba o de arriba hacia abajo) solo se registrara uno ya que corresponde a la misma tendencia.
+
+\begin{lstlisting}[language=Python]
+def senal(data):
+    compra=[]
+    venta=[]
+    condicion=0
+
+    for dia in range(len(data)):
+
+        if data[''MVS30''][dia] > data[''MVS100''][dia]:
+            if condicion != 1:
+                compra.append(data[''AMZN''][dia])
+                venta.append(np.nan)
+                condicion=1
+            else:
+                compra.append(np.nan)
+                venta.append(np.nan)
+        elif data[''MVS30''][dia] < data[''MVS100''][dia]:
+            if condicion != -1:
+                venta.append(data[''AMZN''][dia])
+                compra.append(np.nan)
+                condicion=-1
+            else:
+                compra.append(np.nan)
+                venta.append(np.nan)
+        else:
+            compra.append(np.nan)
+            venta.append(np.nan)
+    return(compra, venta)
+
+\end{lstlisting}
+
+
+
+
+\begin{lstlisting}[language=Python]
+senales=senal(data)
+data[''Compra'']=senales[0]
+data[''Venta'']=senales[1]
+data
+\end{lstlisting}
+
+El resultado se puede apreciar en la figura \ref{fig:m3}.
+
+\begin{lstlisting}[language=Python]
+plt.figure(figsize=(16,5))
+plt.plot(data[''AMZN''], label=''AMZN'')
+plt.plot(data[''MVS30''],label= ''MVS30'')
+plt.plot(data[''MVS100''],label= ''MVS100'')
+plt.scatter(data.index, data[''Compra''],
+ label= ''Precio de compra'',marker=''^'',color=''green'')
+plt.scatter(data.index, data[''Venta''], 
+label= ''Precio de venta'',marker=''v'',color=''red'')
+plt.title(''IPC BMV: Senales con medias moviles'')
+plt.xlabel(''2019-2020'')
+plt.ylabel(''Precio de Close'')
+plt.legend(loc= ''upper left'')
+plt.show
+\end{lstlisting}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[ height=5cm]{Images/output2.png}
+	\caption{Medias móviles: Señales}
+	\label{fig:m3}
+\end{figure}
+
+
+\subsection{RSI}
+
+El RSI\footnote{Relative Strength Index} es un indicador de impulso utilizado en el análisis técnico que mide la magnitud de los cambios de precios recientes para evaluar las condiciones de sobrecompra o sobreventa en el precio de una acción u otro activo. El RSI se muestra como un oscilador (un gráfico de líneas que se mueve entre dos extremos) y puede tener una lectura de 0 a 100.\footnote{J. Welles Wilder, Jr. '' Nuevos conceptos en los sistemas técnicos de comercio '', páginas 64-70. Investigación de tendencias, 1978.}
+
+
+La lectura de este indicador radica en que si sobrepasa la barrera de los 80 indica que el activo esta sobre valuado y por lo tanto tendera a un proceso reversión, de manera contraria si el activo cae por debajo de 20 indicaría que activo esta infravalorado.
+
+
+
+\begin{lstlisting}[language=Python]
+delta=data[''AMZN''].diff(1)
+delta
+positive=delta.copy()
+negative=delta.copy()
+positive[positive<0]=0
+negative[negative>0]=0
+\end{lstlisting}
+
+Para este indicador se tendrá que construir un proceso de media móvil de tamaño $n$ en este caso de 14 días. 
+
+\begin{lstlisting}[language=Python]
+days=14
+average_gain=positive.rolling(window=days).mean()
+average_loss=abs(negative.rolling(window=days).mean())
+
+relative_strength=average_gain/average_loss
+RSI=100.0-(100.0/(1.0+ relative_strength))
+print(RSI)
+\end{lstlisting}
+
+
+\begin{lstlisting}[language=Python]
+combined=pd.DataFrame()
+combined[''AMZN'']=data[''AMZN'']
+combined[''RSI'']=RSI
+
+combined
+\end{lstlisting}
+
+En la figura \ref{fig:m4} se puede observar que en los momentos en donde el RSI cruza con niveles de 80 o 20 el activo tiene a tener un proceso de reversión a la media por lo que es un buen indicador de sobre compra y sobre venta del mercado.
+
+
+
+
+\begin{lstlisting}[language=Python]
+plt.figure(figsize=(16,5))
+ax1=plt.subplot(211)
+ax1.plot(combined.index,combined[''AMZN''],color=''green'',alpha=0.34)
+ax1.set_title(''IPC BMV: RSI'')
+ax1.set_axisbelow(True)
+ax1.tick_params(axis=''x'')
+ax1.tick_params(axis=''y'')
+
+
+ax2=plt.subplot(212,sharex=ax1)
+ax2.plot(combined.index,combined[''RSI''],color=''green'',alpha=0.34)
+ax2.axhline(0,linestyle=''--'',alpha=0.3,color=''#ff0000'')
+ax2.axhline(10,linestyle=''--'',alpha=0.3,color=''#ff0000'')
+ax2.axhline(20,linestyle=''--'',alpha=0.3,color=''#ff0000'')
+ax2.axhline(30,linestyle=''--'',alpha=0.6,color=''#ff0000'')
+ax2.axhline(70,linestyle=''--'',alpha=0.6,color=''#ff0000'')
+ax2.axhline(80,linestyle=''--'',alpha=0.3,color=''#ff0000'')
+ax2.axhline(90,linestyle=''--'',alpha=0.3,color=''#ff0000'')
+ax2.axhline(100,linestyle=''--'',alpha=0.3,color=''#ff0000'')
+
+ax2.set_title(''Valor RSI'')
+
+ax2.set_axisbelow(True)
+ax2.tick_params(axis=''x'')
+ax2.tick_params(axis=''y'')
+
+plt.show()
+\end{lstlisting}
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[ height=5cm]{Images/output3.png}
+	\caption{RSI}
+	\label{fig:m4}
+\end{figure}
+
+
+
+\subsubsection{Señales para RSI}
+
+Para la construcción de señales para este indicador basta con hacer un proceso en donde se calcule en que memento se cruza la linea dos 80 por debajo y en que momentos se cruza la linea de los 20 por arriba.
+
+
+\begin{lstlisting}[language=Python]
+def senal_RSI(data):
+    compra=[]
+    venta=[]
+    condicion=0
+
+    for dia in range(len(data)):
+
+        if data[''RSI''][dia] > 80:
+            if condicion != 1:
+                compra.append(data[''AMZN''][dia])
+                venta.append(np.nan)
+                condicion=0
+            else:
+                compra.append(np.nan)
+                venta.append(np.nan)
+        elif data[''RSI''][dia] < 20:
+            if condicion != -1:
+                venta.append(data[''AMZN''][dia])
+                compra.append(np.nan)
+                condicion=0
+            else:
+                compra.append(np.nan)
+                venta.append(np.nan)
+        else:
+            compra.append(np.nan)
+            venta.append(np.nan)
+    return(compra, venta)
+\end{lstlisting}
+
+
+
+
+\begin{lstlisting}[language=Python]
+DFG=senal_RSI(combined)
+combined[''Buy_signal_price_RSI'']=DFG[1]
+combined[''Sell_signal_price_RSI'']=DFG[0]
+
+\end{lstlisting}
+
+
+El resultado se puede observar en la figura \ref{fig:m5} Las velas verdes representan los mementos de sobre venta que representan oportunidades de compra y las velas rojas indicar momentos de sobre compra que tenderán a un proceso de bajada del precio del activo.
+
+\begin{lstlisting}[language=Python]
+plt.figure(figsize=(16,8))
+plt.scatter(combined.index,combined[''Buy_signal_price_RSI''],
+color=''green'',label=''Compra'',marker=''^'',alpha=1)
+plt.scatter(combined.index,combined[''Sell_signal_price_RSI''],
+color=''red'',label=''Venta'',marker=''v'',alpha=1)
+plt.plot(combined[''AMZN''],label=''Precio'',alpha=0.34)
+plt.title(''IPC BMV: Senales con RSI'')
+plt.xlabel(''2019-2020'')
+plt.ylabel(''Precio de Close en dolares'')
+plt.legend(loc= ''upper left'')
+plt.show
+plt.savefig(''Senales para RSI'')
+\end{lstlisting}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[ height=5cm]{Images/output4.png}
+	\caption{RSI: Señales}
+	\label{fig:m5}
+\end{figure}
+
+\subsection{Momentum y ROC}
+
+ROC\footnote{Rate of Change} y el momentum son indicadores de cambio del precio actual con respecto a el precio de un momento anterior bajo una ventana de días $n$.
+
+
+El momentum es un indicador simple que nos indica la diferencia del precio actual con respecto al de en este caso 50 días antes.
+
+\begin{lstlisting}[language=Python]
+def MOM(df,n):
+    M=pd.Series(df[''Close''].diff(n), name=''Momentum_''+str(n))
+    df=df.join(M)
+    return df
+ \end{lstlisting}   
+    
+\begin{lstlisting}[language=Python]
+df=MOM(df,50)
+    
+\end{lstlisting}   
+    
+    
+\begin{lstlisting}[language=Python]
+fig=plt.figure(figsize=(16,5))
+plt.subplot(2,1,1)
+plt.plot(df.Close)
+plt.title(''IPC BMV:Momentum'')
+plt.subplot(2,1,2)
+plt.plot(df.Momentum_50)
+plt.show()
+\end{lstlisting}
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[ height=5cm]{Images/output5.png}
+	\caption{Momentum}
+	\label{fig:m6}
+\end{figure}
+
+
+La ROC como su nombre lo dice es una tasa de cambio con respecto a un precio anterior de ventana $n$.
+
+\[ROC=\left ( \frac{P_{t}-P_{t-n}}{P_{t-n}} \right )*100\] 
+
+\begin{lstlisting}[language=Python]
+def ROC(df,n):
+    M=df[''Close''].diff(n-1)
+    N=df[''Close''].shift(n-1)
+    ROC=pd.Series(M/N,name=''ROC_''+str(n))
+    df=df.join(ROC)
+    return df
+\end{lstlisting}    
+    
+\begin{lstlisting}[language=Python]
+df2=ROC(df,50)
+
+\end{lstlisting}
+
+
+
+\begin{lstlisting}[language=Python]
+fig=plt.figure(figsize=(16,5))
+plt.subplot(2,1,1)
+plt.plot(df2.Close)
+plt.title(''Momentum'')
+plt.subplot(2,1,2)
+plt.plot(df2.ROC_50)
+plt.show()
+\end{lstlisting}
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[ height=5cm]{Images/output5.1.png}
+	\caption{ROC}
+	\label{fig:m7}
+\end{figure}
+
+\subsection{Bandas de bollinger}
+Las bandas de bollinger son uno de los indicadores de análisis técnico mas utilizados en el mundo ya que nos dan una idea del concepto de estabilidad en el mercado. \footnote{John Bollinger's Official Bollinger Band Website. bollingerbands (en inglés). Consultado el 17 de noviembre de 2021.}
+
+Se calcula a partir de una media móvil y sobre ella se calcula su desviación estándar bajo la formula.
+
+\[se=\sqrt{\frac{\sum \left ( x_i-\mu  \right ){^2}}{N}}\]
+
+De acuerdo a la desigualdad de Chebyshev cuando no se conoce el tipo de distribución que sigue un activo se puede estimar que a dos desviaciones estar se encuentra el 75\% de los datos.
+
+Esto nos ayuda a conocer cuando el comportamiento del activo es atípico y podría sufrir un proceso de reversión a la media. 
+
+
+\begin{lstlisting}[language=Python]
+def b_bands(df,n):
+    MA=pd.Series(pd.Series.rolling(df[''Close''],n).mean())
+    MSD=pd.Series(pd.Series.rolling(df[''Close''],n).std())
+    # Dos desviaciones estandar
+    b1=MA+(MSD*2)
+    B1=pd.Series(b1,name=''BB_''+str(n))
+    df=df.join(B1)
+    b2=MA-(MSD*2)
+    B2=pd.Series(b2,name=''Bb_''+str(n))
+    df=df.join(B2)
+    return df
+\end{lstlisting}
+
+
+
+\begin{lstlisting}[language=Python]
+df_bb=b_bands(df,26)
+df_bb
+\end{lstlisting}
+
+Las bandas se pueden observar en la figura \ref{fig:m8}.
+
+\begin{lstlisting}[language=Python]
+plt.figure(figsize=(13,5))
+plt.plot(df_bb[''Close''],label=''Amazon STOCK'')
+plt.plot(df_bb[''BB_26''],label= ''Bollinger up'')
+plt.plot(df_bb[''Bb_26''],label= ''Bollinger down'')
+plt.title(''IPC BMV: Bandas de Bollinger'')
+plt.xlabel(''2019-2020'')
+plt.ylabel(''Precio de Close en dolares'')
+plt.legend(loc= ''upper left'')
+plt.show
+\end{lstlisting}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[ height=5cm]{Images/output6.png}
+	\caption{Bandas de bollinger}
+	\label{fig:m8}
+\end{figure}
+
+
+\subsubsection{Señales bandas de bollinger}
+
+La lectura de las bandas de bollinger se es la siguiente.
+
+Cuando el precio de cierre se sale de las bandas de bollinger se considera un comportamiento atípico que tendera a regresar a la media.
+Por lo que las bandas son zonas de rebote del precio.
+
+De esta manera las señales se ejecutan al igual que el RSI cuando el precio de cierre corte por arriba o por abajo la banda de bollinger superior o inferior desde el centro.
+
+Siendo señal de compra cuando corte con la banda inferior y señal de venta cuando corte con la superior.
+
+
+
+\begin{lstlisting}[language=Python]
+def senal_bollinger(data):
+    compra=[]
+    venta=[]
+    condicion=0
+
+    for dia in range(len(data)):
+
+        if data[''Bb_26''][dia] > data[''Close''][dia]:
+            if condicion != 1:
+                compra.append(data[''Close''][dia])
+                venta.append(np.nan)
+                condicion=0
+            else:
+                compra.append(np.nan)
+                venta.append(np.nan)
+        elif data[''BB_26''][dia] < data[''Close''][dia]:
+            if condicion != -1:
+                venta.append(data[''Close''][dia])
+                compra.append(np.nan)
+                condicion=0
+            else:
+                compra.append(np.nan)
+                venta.append(np.nan)
+        else:
+            compra.append(np.nan)
+            venta.append(np.nan)
+    return(compra, venta)
+\end{lstlisting}   
+    
+    
+\begin{lstlisting}[language=Python]   
+asd=senal_bollinger(df_bb)
+df_bb[''Buy_signal_price_Bb'']=asd[0]
+df_bb[''Sell_signal_price_BB'']=asd[1]
+\end{lstlisting}
+
+En la figura \ref{fig:m9} se puede apreciar las señales creadas.
+
+\begin{lstlisting}[language=Python]
+plt.figure(figsize=(13,5))
+plt.scatter(df_bb.index,df_bb[''Buy_signal_price_Bb''],
+color=''green'',label=''Compra'',marker=''^'',alpha=1)
+plt.scatter(df_bb.index,df_bb[''Sell_signal_price_BB''],
+color=''red'',label=''Venta'',marker=''v'',alpha=1)
+plt.plot(df[''Close''],label=''Precio'',alpha=0.34)
+plt.title(''IPC BMV:Senales con bandas de Bollinger'')
+plt.xlabel(''2019-2020'')
+plt.ylabel(''Precio de Close en dolares'')
+plt.legend(loc= ''upper left'')
+plt.show
+plt.savefig(''Senales bandas de Bollinger'')
+\end{lstlisting}
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[ height=5cm]{Images/output7.png}
+	\caption{Bandas de bollinger: Señales}
+	\label{fig:m9}
+\end{figure}
+
+\subsection{MACD}
+
+El MACD\footnote{Moving average convergence divergence.}
+
+Se construye a partir de medias móviles exponenciales cortas y medianas restadas para ver la la divergencia entre ciclos\footnote{Al igual que el indicador de medias moviles.} no obstante la pauta para poder leer estas diferencias esta en la creación de una linea de señal con un intervalo de tiempo mas corto que se construye a partir de la diferencia entre medias móviles obtenidas anteriormente.
+
+
+
+
+\begin{lstlisting}[language=Python]
+#Media movil exponencial
+ShortEMA=df.Close.ewm(span=12,adjust=False).mean()
+LongEMA=df.Close.ewm(span=26,adjust=False).mean()
+\end{lstlisting}
+
+
+\[MACD= MMe_{n+m} - MMe_n \]
+\[Sl= MMe_{macd_{n - b}} \]
+
+\begin{lstlisting}[language=Python]
+MACD= ShortEMA - LongEMA
+senal=MACD.ewm(span=9,adjust=False).mean()
+\end{lstlisting}
+
+Como se puede observar en la figura \ref{fig:m9.1} la señal al ser un producto del mismo MACD tiene un desfase que parece casi imperceptible, sin embargo este nos ayudara para hacer las lecturas de compra y venta.
+
+\begin{lstlisting}[language=Python]
+plt.figure(figsize=(16,5))
+plt.plot(df.index,MACD,label=''MACD'',color=''red'')
+plt.plot(senal.index,senal,label=''Signal'',color=''blue'')
+plt.legend(loc=''upper left'')
+plt.title(''IPC BMV: MACD'')
+plt.show()
+\end{lstlisting}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[ height=5cm]{Images/output8.png}
+	\caption{MACD}
+	\label{fig:m9.1}
+\end{figure}
+
+
+\subsubsection{MACD señal}
+
+La lectura de compra y venta del MACD es la siguiente cuando la linea de MACD corta por arriba de la linea de señal se considera una señal de compra, de forma contraria si esta cruza por abajo la linea de señal se considera una señal de venta.
+\begin{lstlisting}[language=Python]
+df[''MACD'']=MACD
+df[''Signal'']=senal
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python]
+def senal_MACD(data):
+    compra=[]
+    venta=[]
+    condicion=0
+
+    for dia in range(len(data)):
+
+        if data[''MACD''][dia] > data[''Signal''][dia]:
+            if condicion != 1:
+                compra.append(data[''Close''][dia])
+                venta.append(np.nan)
+                condicion=1
+            else:
+                compra.append(np.nan)
+                venta.append(np.nan)
+        elif data[''MACD''][dia] < data[''Signal''][dia]:
+            if condicion != -1:
+                venta.append(data[''Close''][dia])
+                compra.append(np.nan)
+                condicion=-1
+            else:
+                compra.append(np.nan)
+                venta.append(np.nan)
+        else:
+            compra.append(np.nan)
+            venta.append(np.nan)
+    return(compra, venta)
+
+\end{lstlisting}
+\begin{lstlisting}[language=Python]
+a=senal_MACD(df)
+df[''Buy_signal price'']=a[0]
+df[''Sell_signal price'']=a[1]
+\end{lstlisting}
+
+El MACD se considera un indicador de venta y de compra corta ya que sus intervalos por lo regular son de 26,12 y 9 periodos para las medias móviles exponenciales.
+\vspace{0.5cm}
+
+El resultado de las señales de compra y venta a traves del MACD para el IPC BMV se puede observar el la figura \ref{fig:m10}.
+
+
+\begin{lstlisting}[language=Python]
+plt.figure(figsize=(16,5))
+plt.scatter(df.index,df[''Buy_signal price''],color=''green'',
+label=''Compra'',marker=''^'',alpha=1)
+plt.scatter(df.index,df[''Sell_signal price''],color=''red'',
+label=''Venta'',marker=''v'',alpha=1)
+plt.plot(df[''Close''],label=''Precio'',alpha=0.34)
+plt.title(''IPC BMV:Senales MACD'')
+plt.xlabel(''2019-2020'')
+plt.ylabel(''Precio de Close en dolares'')
+plt.legend(loc= ''upper left'')
+plt.show
+\end{lstlisting}
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[ height=5cm]{Images/output9.png}
+	\caption{MACD: Señales}
+	\label{fig:m10}
+\end{figure}
+
+\subsection{ADX}
+
+
+
+\begin{lstlisting}[language=Python]
+def ADX(df,n,n_ADX):
+    i=0
+    UpI=[]
+    DoI=[]
+    df=df.reset_index()
+    while i+1 <=df.index[-1]:
+        UpMove=df.iloc[i+1][''High''] - df.iloc[i][''High'']
+        DoMove=df.iloc[i][''Low''] - df.iloc[i+1][''Low'']
+        if UpMove > DoMove and UpMove > 0:
+            UpD=UpMove
+        else: UpD=0
+        UpI.append(UpD)
+        if DoMove > UpMove and DoMove > 0:
+            DoD=DoMove
+        else: DoD=0
+        DoI.append(DoD)
+        i=i+1
+    i=0
+    TR_1=[0]
+    while i <df.index[-1]:
+        TR=max(df.iloc[i+1][''High''],df.iloc[i][''Close''])-
+        min(df.iloc[i+1][''Low''],df.iloc[1][''Close''])
+        TR_1.append(TR)
+        i=i+1
+    TR_s=pd.Series(TR_1)
+    ATR=pd.Series(pd.Series.ewm(TR_s,span=n,min_periods=n).mean())
+    UpI=pd.Series(UpI)
+    DoI=pd.Series(DoI)
+    PosDI=pd.Series(pd.Series.ewm(UpI,span=n,min_periods=n-1).
+    mean()/ATR,name=''pDI'')
+    NegDI=pd.Series(pd.Series.ewm(DoI,span=n,min_periods=n-1).
+    mean()/ATR,name=''nDI'')
+    ADX=pd.Series(pd.Series.ewm(abs(PosDI-NegDI)/(PosDI+NegDI),span=n_ADX,min_periods=n_ADX-1).mean(),name=''ADX'')
+    df=df.join(ADX)
+    df=df.join(PosDI)
+    df=df.join(NegDI)
+    df.set_index(''Date'',inplace=True)
+    return df
+
+\end{lstlisting}
+\begin{lstlisting}[language=Python]
+dsdd=ADX(df,14,14)
+dsdd.head()
+\end{lstlisting}
+
+
+\begin{lstlisting}[language=Python]
+plt.figure(figsize=(16,5))
+AX1=plt.subplot(211)
+plt.plot(dsdd.Close,label=''Cierre'')
+AX2=plt.subplot(212,sharex=AX1)
+plt.plot(dsdd.index,dsdd.ADX,label=''ADX'',color=''k'')
+plt.plot(dsdd.index,dsdd.pDI,label=''pDI'',color=''g'')
+plt.plot(dsdd.index,dsdd.nDI,label=''nDI'',color=''r'')
+plt.legend(loc=''upper left'')
+plt.title(''IPC BMV: ADX'')
+plt.show()
+\end{lstlisting}
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[ height=5cm]{Images/output10.png}
+	\caption{RSI: Señales}
+	\label{fig:m11}
+\end{figure}
+
+\subsubsection{ADX Señal}
+\begin{lstlisting}[language=Python]
+def senal_ADX(data):
+    compra=[]
+    venta=[]
+    condicion=0
+
+    for dia in range(len(data)):
+
+        if data[''pDI''][dia] > data[''nDI''][dia]:
+            if condicion != 1:
+                compra.append(data[''Close''][dia])
+                venta.append(np.nan)
+                condicion=1
+            else:
+                compra.append(np.nan)
+                venta.append(np.nan)
+        elif data[''pDI''][dia] < data[''nDI''][dia]:
+            if condicion != -1:
+                venta.append(data[''Close''][dia])
+                compra.append(np.nan)
+                condicion=-1
+            else:
+                compra.append(np.nan)
+                venta.append(np.nan)
+        else:
+            compra.append(np.nan)
+            venta.append(np.nan)
+    return(compra, venta)
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python]
+asdx=senal_ADX(dsdd)
+
+dsdd[''Buy_signal_price_ADX'']=asdx[0]
+dsdd[''Sell_signal_price_ADX'']=asdx[1]
+\end{lstlisting}
+
+
+\begin{lstlisting}[language=Python]
+plt.figure(figsize=(16,5))
+plt.scatter(dsdd.index,dsdd[''Buy_signal_price_ADX''],
+color=''green'',label=''Compra'',marker=''^'',alpha=1)
+plt.scatter(dsdd.index,dsdd[''Sell_signal_price_ADX''],
+color=''red'',label=''Venta'',marker=''v'',alpha=1)
+plt.plot(df[''Close''],label=''Precio'',alpha=0.34)
+plt.title(''IPC BMV:Senales conADX'')
+plt.xlabel(''2019-2020'')
+plt.ylabel(''Precio de Close en dolares'')
+plt.legend(loc= ''upper left'')
+plt.show
+\end{lstlisting}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[ height=5cm]{Images/output11.png}
+	\caption{RSI: Señales}
+	\label{fig:m12}
+\end{figure}
+
+\subsection{Sar parabolico}
+\begin{lstlisting}[language=Python]
+def psar(barsdata, iaf = 0.02, maxaf = 0.2):
+    length = len(barsdata)
+    high = list(barsdata['High'])
+    low = list(barsdata['Low'])
+    close = list(barsdata['Close'])
+    psar = close[0:len(close)]
+    psarbull = [None] * length
+    psarbear = [None] * length
+    bull = True
+    af = iaf
+    ep = low[0]
+    hp = high[0]
+    lp = low[0]
+    for i in range(2,length):
+        if bull:
+            psar[i] = psar[i - 1] + af * (hp - psar[i - 1])
+        else:
+            psar[i] = psar[i - 1] + af * (lp - psar[i - 1])
+        reverse = False
+        if bull:
+            if low[i] < psar[i]:
+                bull = False
+                reverse = True
+                psar[i] = hp
+                lp = low[i]
+                af = iaf
+        else:
+            if high[i] > psar[i]:
+                bull = True
+                reverse = True
+                psar[i] = lp
+                hp = high[i]
+                af = iaf
+        if not reverse:
+            if bull:
+                if high[i] > hp:
+                    hp = high[i]
+                    af = min(af + iaf, maxaf)
+                if low[i - 1] < psar[i]:
+                    psar[i] = low[i - 1]
+                if low[i - 2] < psar[i]:
+                    psar[i] = low[i - 2]
+            else:
+                if low[i] < lp:
+                    lp = low[i]
+                    af = min(af + iaf, maxaf)
+                if high[i - 1] > psar[i]:
+                    psar[i] = high[i - 1]
+                if high[i - 2] > psar[i]:
+                    psar[i] = high[i - 2]
+        if bull:
+            psarbull[i] = psar[i]
+        else:
+            psarbear[i] = psar[i]
+    return { ''high'':high, ''low'':low,
+     ''close'':close, ''psar'':psar, ''psarbear'':psarbear,
+      ''psarbull'':psarbull}
+
+\end{lstlisting}   
+    
+\begin{lstlisting}[language=Python]
+dasdasdas=psar(df)
+sadsew3=pd.DataFrame(dasdasdas)
+\end{lstlisting}
+
+
+
+
+\begin{lstlisting}[language=Python]
+plt.figure(figsize=(16,5))
+plt.scatter(sadsew3.index,sadsew3[''psarbull''],
+color=''green'',label=''Compra'',alpha=1)
+plt.scatter(sadsew3.index,sadsew3[''psarbear''],
+color=''red'',label=''Venta'',alpha=1)
+plt.plot(sadsew3[''close''],label=''Precio'',alpha=0.34)
+plt.title(''IPC BMV: SAR parabolico'')
+plt.xlabel(''2019-2020'')
+plt.ylabel(''Precio de Close en dolares'')
+plt.legend(loc= ''upper left'')
+plt.show
+\end{lstlisting}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[ height=5cm]{Images/output12.png}
+	\caption{RSI: Señales}
+	\label{fig:m13}
+\end{figure}
+
+
+\section{Redes neuronales alimentadas de indicadores de análisis técnico}
+
+Los indicadores de análisis técnico si bien son un tipo de indicador financiero de fácil análisis que reduce la brecha de información entre los grandes inversionistas existen un sin fin de acciones que requieren tiempo para analizarse y comprender cuales son los indicadores que podrían funcionar de mejor manera haciendo una estrategia mas optima.
+
+
+Con el fin de resolver en parte este problema de volumen de analisis de datos se construyo un robot de trading algorítmico.
+
+Este robot funciona de la siguiente manera.
+
+En primer punto como todo documento de python se incio importando las paqueterias necesarias.\footnote{Algunas de ellas ya fueron explicadas anteriormente.}
+
+
+Paqueterias como time ayudaran a hacer un conteo del tiempo en segundos, \textbf{sounddevice y tkinter} para la creación de una alarma, \textbf{smtplib} para obtener la posibilidad de mandar correos electrónicos a través de python, \textbf{easygui} para la creación de cajas de mensaje para hacer una intefaz gráfica, \textbf{os} que nos ayudara a usar código de consola a través de python y \textbf{sklearn} que nos ayuda para entrenamiento de datos para modelos.\footnote{Mas adelante se introducirán otra.}
+
+\begin{lstlisting}[language=Python]
+import numpy as np 
+import pandas as pd 
+import matplotlib.pyplot as plt
+import yfinance as yf
+import time
+import sounddevice as sd
+import smtplib
+import easygui as eg
+import os
+from sklearn.impute import SimpleImputer
+\end{lstlisting}
+
+
+Para el robot de trading lo primero que se hizo fue construir una interfaz de entrada  para poder hacer mas amigable la ejecución.
+
+
+\begin{lstlisting}[language=Python]
+##-------------------- CAPA DE ENTRADA
+eg.msgbox(msg=''''''
+                        Instituto Politecnico nacional
+                         Robot de trading algoritmico \n
+            Autor: Luis Alberto Rueda Tapia
+            Correo:luisalbertoruedatapia@gmail.com                   
+          '''''',
+          title='Control: msgbox', 
+          ok_button='Continuar',
+          image=''imagen.png'')
+\end{lstlisting}
+
+
+
+\begin{lstlisting}[language=Python]
+#-------------------SELECCION DE ACTIVO
+from tkinter import *
+from tkinter import ttk
+from tkinter import messagebox
+
+def ventanaCapturaDatos():
+    def devolverDatos():
+        textoCaja = entryTexto.get()
+        texto.set(textoCaja)
+        root.destroy()
+    root = Tk()
+    root.title(''Nombre del activo que desea ejecutar:'')
+    # FRAME DE ENTRADA DE DATOS
+    miFrame = Frame(root)
+    miFrame.pack()
+    texto = StringVar()
+    # ENTRY 
+    entryTexto = Entry(miFrame, justify = CENTER,
+     textvariable = texto)
+    entryTexto.grid(row = 0, column = 0,
+     padx = 5, pady = 5)
+    root.iconbitmap()         
+    root.geometry('400x75')
+    # BOTON ACEPTAR
+    botonAceptar = Button(miFrame, text = ''Aceptar'', 
+    command = lambda:devolverDatos())
+    botonAceptar.grid(row = 1, column = 0, 
+    sticky = ''e'', padx = 5, pady = 5)
+    root.mainloop()
+    return texto.get()
+\end{lstlisting}
+
+Se preguntara se el pronostico sobre tendencia del activo se quiere hacer solo para un activo\footnote{Que esto es conveniente por el tiempo que requiere ejecutar todos los activos.} o si gusta hacerlo con todos los activos listados.\footnote{Los activos listados corresponden a los pertenecientes en el IPC BMV, sin embargo se podría replicar el ejercicio para cualquier activo en el mundo. }
+
+
+
+\begin{lstlisting}[language=Python]
+#---------- Un solo activo o todos
+
+def askMe():
+    res = messagebox.askquestion('askquestion', 
+    'Te gustaria hacer un pronostico para solo un activo?')
+    if res == 'yes':
+        activos= ventanaCapturaDatos()
+        activos=[activos]
+    elif res == 'no':
+        activos=[''AC.MX'' , 
+                ''ACCELSAB.MX'' ,
+                ''ACTINVRB.MX'' , 
+                ''AEROMEX.MX'' , 
+                ''AGUA.MX'' , 
+                ''ALEATIC.MX'' , 
+                ''ALFAA.MX'' , 
+                ''ALPEKA.MX'' , 
+                ''ALSEA.MX'' , 
+                ''AMXL.MX'' ,
+                ''ARA.MX'' , 
+                ''ARISTOSA.MX'' , 
+                ''ASURB.MX'' , 
+                ''AUTLANB.MX'' , 
+                ''AXTELCPO.MX'' , 
+                ''AZTECACPO.MX'' ,
+                ''BACHOCOB.MX'' , 
+                ''BAFARB.MX'' , 
+                ''BBAJIOO.MX'' , 
+                ''BIMBOA.MX'' , 
+                ''BOLSAA.MX'' , 
+                ''BSMXB.MX'' , 
+                ''CADUA.MX'' , 
+                ''CEMEXCPO.MX'' , 
+                ''CERAMICB.MX'' , 
+                ''CHDRAUIB.MX'' , 
+                ''CIDMEGA.MX'' , 
+                ''CIEB.MX'' , 
+                ''CMOCTEZ.MX'' , 
+                ''CMRB.MX'' , 
+                ''COLLADO.MX'' , 
+                ''CREAL.MX'' , 
+                ''CUERVO.MX'' , 
+                ''CULTIBAB.MX'' , 
+                ''CYDSASAA.MX'' , 
+                ''DINEB.MX'' , 
+                ''ELEKTRA.MX'' , 
+                ''FEMSAUBD.MX'' , 
+                ''FINAMEXO.MX'' , 
+                ''FRAGUAB.MX'' , 
+                ''GAPB.MX'' ,  
+                ''GBMO.MX'' , 
+                ''GCARSOA1.MX'' , 
+                ''GCC.MX'' , 
+                ''GENTERA.MX'' , 
+                ''GFAMSAA.MX'' , 
+                ''GFINBURO.MX'' , 
+                ''GFMULTIO.MX'' , 
+                ''GFNORTEO.MX'' , 
+                ''GICSAB.MX'' , 
+                ''GIGANTE.MX'' , 
+                ''GISSAA.MX'' , 
+                ''GMD.MX'' , 
+                ''GMEXICOB.MX'' ,  
+                ''GNP.MX'' , 
+                ''GPH1.MX'' , 
+                ''GPROFUT.MX'' , 
+                ''GRUMAB.MX'' , 
+                ''GSANBORB-1.MX'' , 
+                ''HCITY.MX'' , 
+                ''HERDEZ.MX'' , 
+                ''HOMEX.MX'' , 
+                ''HOTEL.MX'' , 
+                ''ICHB.MX'' , 
+                ''IDEALB-1.MX'' , 
+                ''IENOVA.MX'' , 
+                ''INVEXA.MX'' ,
+                ''KIMBERA.MX'' , 
+                ''KOFUBL.MX'' , 
+                ''KUOB.MX'' , 
+                ''LABB.MX'' , 
+                ''LACOMERUBC.MX'' , 
+                ''LALAB.MX'' , 
+                ''LAMOSA.MX'' , 
+                ''LIVEPOLC-1.MX'' , 
+                ''MAXCOMA.MX'' , 
+                ''MEDICAB.MX'' , 
+                ''MEGACPO.MX'' , 
+                ''MFRISCOA-1.MX'' , 
+                ''MINSAB.MX'' , 
+                ''MONEXB.MX'' , 
+                ''NEMAKA.MX'' , 
+                ''OMAB.MX'' , 
+                ''ORBIA.MX'' , 
+                ''PASAB.MX'' , 
+                ''PE&OLES.MX'' , 
+                ''PINFRA.MX'' , 
+                ''POCHTECB.MX'' , 
+                ''POSADASA.MX'' , 
+                ''Q.MX'' , 
+                ''RCENTROA.MX'' , 
+                ''RLHA.MX'' , 
+                ''SIMECB.MX'' , 
+                ''SITESB-1.MX'' , 
+                ''SORIANAB.MX'' , 
+                ''SPORTS.MX'' , 
+                ''TEAKCPO.MX'' , 
+                ''TLEVISACPO.MX'' , 
+                ''TMMA.MX'' , 
+                ''TRAXIONA.MX'' , 
+                ''UNIFINA.MX'' , 
+                ''URBI.MX'' , 
+                ''VALUEGFO.MX'' , 
+                ''VESTA.MX'' , 
+                ''VINTE.MX'' ,
+                ''VISTAA.MX'' , 
+                ''VITROA.MX'' , 
+                ''VOLARA.MX'' , 
+                ''WALMEX.MX'']
+    return activos
+
+
+activos=askMe()
+
+\end{lstlisting}
+
+Después se ejecutara una ventana que preguntara el tiempo el que se actualizara automáticamente el robot, ya que trabaja con datos diarios se sugiere que la actualización sea diariamente. 
+
+
+\begin{lstlisting}[language=Python]
+#-------------------Tiempo de actualizacion
+
+
+def ventanaCapturaDatos():
+    def devolverDatos():
+        textoCaja = entryTexto.get()
+        texto.set(textoCaja)
+        root.destroy()
+    root = Tk()
+    root.title(''Repeticion del ciclo en minutos:'')
+    # FRAME DE ENTRADA DE DATOS
+    miFrame = Frame(root)
+    miFrame.pack()
+    texto = StringVar()
+    # ENTRY 
+    entryTexto = Entry(miFrame, justify = CENTER,
+     textvariable = texto)
+    entryTexto.grid(row = 0, column = 0, padx = 5, pady = 5)
+    root.iconbitmap()        
+    root.geometry('400x75')
+    # BOTON ACEPTAR
+    botonAceptar = Button(miFrame, text = ''Aceptar'', 
+    command = lambda:devolverDatos())
+    botonAceptar.grid(row = 1, column = 0, sticky = ''e'',
+     padx = 5, pady = 5)
+    root.mainloop()
+    return texto.get()
+
+
+intervalo = ventanaCapturaDatos()
+intervalo= intervalo*60
+\end{lstlisting}
+
+Después de esto se inicializara el código construyendo algunas cosas que si bien no son necesarias ayudaran a hacer el proyecto mucho mas responsivo.
+
+En este caso la construcción de una alarma.
+
+
+\begin{lstlisting}[language=Python]
+# --------------------Alarma
+
+def beep(nota: int, octava: int, duracion: int) -> None:
+    framerate = 44100
+    t = np.linspace(0, duracion / 1000, int(framerate * duracion / 1000))
+    frequency = frec(nota, octava)
+    data = np.sin(2 * np.pi * frequency * t)
+    sd.play(data, framerate)
+    sd.wait()
+
+def frec(nota: int, octava: int) -> int:
+    expo = octava * 12 + (nota - 58)
+    return int(440 * ((2 ** (1 / 12)) ** expo))
+
+imnote = [
+    10, 10, 10, 6, 1,
+    10, 6, 1, 10,
+    5, 5, 5, 6, 1,
+    9, 6, 1, 10,
+    10, 10, 10, 10, 9, 8,
+    7, 6, 8, 12, 4, 3, 2,
+    1, 12, 1, 6, 9, 6, 9,
+]
+imoctave = [
+    4, 4, 4, 4, 5,
+    4, 4, 5, 4,
+    5, 5, 5, 5, 5,
+    4, 4, 5, 4,
+    5, 4, 4, 5, 5, 5,
+    5, 5, 5, 4, 5, 5, 5,
+    5, 4, 5, 4, 4, 4, 4,
+]
+imlong = [
+    500, 500, 500, 250, 250,
+    500, 250, 250, 1000,
+    500, 500, 500, 250, 250,
+    500, 250, 250, 1000,
+    500, 250, 250, 500, 250, 250,
+    250, 250, 250, 250, 500, 250, 250,
+    250, 250, 250, 250, 500, 250, 250,
+]
+\end{lstlisting}
+En las siguientes lineas de código.
+Se limpiara la consola para poder trabajar con mayor limpieza.
+
+\begin{lstlisting}[language=Python]
+#--------- limpiar consola
+
+
+def clearConsole():
+    command = 'clear'
+    if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
+        command = 'cls'
+    os.system(command)
+
+clearConsole()
+\end{lstlisting}
+
+Con el tiempo especificado anteriormente\footnote{Que se sugirió sea para que el robot se repita diarimente.} se creara un contador que podrá llevar a cabo esta función.
+
+\begin{lstlisting}[language=Python]
+#------------Contador
+
+def countdown(num_of_secs):
+    while num_of_secs:
+        m, s = divmod(num_of_secs, 60)
+        min_sec_format = '{:02d}:{:02d}'.format(m, s)
+        clearConsole()
+        print(min_sec_format, end='\n')
+        time.sleep(1)
+        num_of_secs -= 1
+
+    print('Contador ha finalizado.')
+\end{lstlisting}
+
+A partir de este punto se inicilizara el ciclo while que se repetirá de manera infinita a menos que el desarrollador desee terminar con el proceso.
+
+La primera parte del ciclo corresponde a la creación de funciones que utilizamos anteriormente para ceear indicadores de análisis técnico.
+
+
+
+\begin{lstlisting}[language=Python]
+#------ Variable while
+Variable_de_control=True
+
+#-----------------------Funciones indicadores
+
+def MOM(df,n):
+    M=pd.Series(df[''Close''].diff(n), name=''Momentum_''+str(n))
+    df=Indicadores.join(M)
+    return df
+
+def ROC(df,n):
+    M=df[''Close''].diff(n-1)
+    N=df[''Close''].shift(n-1)
+    ROC=pd.Series(M/N,name=''ROC_''+str(n))
+    return ROC
+
+def b_bands(df,n):
+    MA=pd.Series(pd.Series.rolling(df[''Close''],n).mean())
+    MSD=pd.Series(pd.Series.rolling(df[''Close''],n).std())
+    # Dos desviaciones estandar
+    b1=MA+(MSD*2)
+    B1=pd.Series(b1,name=''BB'')
+    df=df.join(B1)
+    
+    b2=MA-(MSD*2)
+    B2=pd.Series(b2,name=''Bb'')
+    df=df.join(B2)
+    return df
+
+
+def psar(barsdata, iaf = 0.02, maxaf = 0.2):
+    length = len(barsdata)
+    high = list(barsdata['High'])
+    low = list(barsdata['Low'])
+    close = list(barsdata['Close'])
+    psar = close[0:len(close)]
+    psarbull = [None] * length
+    psarbear = [None] * length
+    bull = True
+    af = iaf
+    ep = low[0]
+    hp = high[0]
+    lp = low[0]
+    for i in range(2,length):
+        if bull:
+            psar[i] = psar[i - 1] + af * (hp - psar[i - 1])
+        else:
+            psar[i] = psar[i - 1] + af * (lp - psar[i - 1])
+        reverse = False
+        if bull:
+            if low[i] < psar[i]:
+                bull = False
+                reverse = True
+                psar[i] = hp
+                lp = low[i]
+                af = iaf
+        else:
+            if high[i] > psar[i]:
+                bull = True
+                reverse = True
+                psar[i] = lp
+                hp = high[i]
+                af = iaf
+        if not reverse:
+            if bull:
+                if high[i] > hp:
+                    hp = high[i]
+                    af = min(af + iaf, maxaf)
+                if low[i - 1] < psar[i]:
+                    psar[i] = low[i - 1]
+                if low[i - 2] < psar[i]:
+                    psar[i] = low[i - 2]
+            else:
+                if low[i] < lp:
+                    lp = low[i]
+                    af = min(af + iaf, maxaf)
+                if high[i - 1] > psar[i]:
+                    psar[i] = high[i - 1]
+                if high[i - 2] > psar[i]:
+                    psar[i] = high[i - 2]
+        if bull:
+            psarbull[i] = psar[i]
+        else:
+            psarbear[i] = psar[i]
+    return { ''high'':high, ''low'':low, ''close'':close, 
+    ''psar'':psar, ''psarbear'':psarbear, ''psarbull'':psarbull}
+
+
+def ADX(df,n,n_ADX):
+    i=0
+    UpI=[]
+    DoI=[]
+    df=df.reset_index()
+    while i+1 <=df.index[-1]:
+        UpMove=df.iloc[i+1][''High''] - df.iloc[i][''High'']
+        DoMove=df.iloc[i][''Low''] - df.iloc[i+1][''Low'']
+        if UpMove > DoMove and UpMove > 0:
+            UpD=UpMove
+        else: UpD=0
+        UpI.append(UpD)
+        if DoMove > UpMove and DoMove > 0:
+            DoD=DoMove
+        else: DoD=0
+        DoI.append(DoD)
+        i=i+1
+    i=0
+    TR_1=[0]
+    while i <df.index[-1]:
+        TR=max(df.iloc[i+1][''High''],df.iloc[i][''Close''])-
+        min(df.iloc[i+1][''Low''],df.iloc[1][''Close''])
+        TR_1.append(TR)
+        i=i+1
+    TR_s=pd.Series(TR_1)
+    ATR=pd.Series(pd.Series.ewm(TR_s,span=n,min_periods=n).mean())
+    UpI=pd.Series(UpI)
+    DoI=pd.Series(DoI)
+    PosDI=pd.Series(pd.Series.ewm(UpI,span=n,min_periods=n-1).
+    mean()/ATR,name=''pDI'')
+    NegDI=pd.Series(pd.Series.ewm(DoI,span=n,min_periods=n-1).
+    mean()/ATR,name=''nDI'')
+    ADX=pd.Series(pd.Series.ewm(abs(PosDI-NegDI)/(PosDI+NegDI),span=n_ADX,min_periods=n_ADX-1).mean(),name=''ADX'')
+    df=df.join(ADX)
+    df=df.join(PosDI)
+    df=df.join(NegDI)
+    df.set_index(''Date'',inplace=True)
+    return df
+
+
+
+
+
+
+\end{lstlisting}
+
+
+Con el fin de incluir un indicador de volatilidad en el mercado se utilizo en indice VIX\footnote{CBOE Volatility Index} para que el robot pueda diferenciar momentos de alta o baja volatilidad en el mercado como una variable.
+
+\begin{lstlisting}[language=Python]
+vix = yf.download(''^VIX'', start=''2015-01-01'', end=''2030-12-25'',
+group_by=''ticker'') 
+vix[''Close'']
+len(vix)
+
+dfq = yf.download(''^VIX '', start=''2015-01-01'', end=''2030-12-25'',
+group_by=''ticker'') 
+dfq[''Fecha'']=dfq.index
+\end{lstlisting}
+
+
+En este momento el robot inicia la configuración de descarga de cada ticker especificado en la lista de activos.
+
+Y se crea un imputador, ya que el VIX y los distintos activos no cotizan el mismo numero de días en el mercado se debe rellenar los huecos faltantes.
+\begin{lstlisting}[language=Python]
+# ---------------------Robot
+Nivel_de_confianza=[]
+Ticketss=[]
+
+ticker=activos
+# Descarga de datos de yahoo finance 
+print(''-------Descarga de datos de Yahoo finance-------'')
+print(ticker)
+df = yf.download(ticker, start=''2015-01-01'',
+ end=''2030-12-25'',group_by=''ticker'') 
+df[''Fecha'']=df.index
+Fecha=df.index
+asddd=pd.merge(df,dfq, on=''Fecha'', how='left')
+Nuevof=pd.DataFrame()
+Nuevof[''Cierre'']=asddd[''Close_x'']
+Nuevof[''Vix'']=asddd[''Close_y'']
+
+imputer = SimpleImputer(strategy='mean')
+imputer = imputer.fit(Nuevof[['Vix']])
+Nuevof['Vix'] = imputer.transform(Nuevof[['Vix']])
+Nuevof.index=Fecha
+\end{lstlisting}
+
+
+Se correrán las funciones de los indicadores de análisis técnico vistas anteriormente y especificando los parámetros requeridos por el analista.
+
+
+Algo muy importante en este punto es que en algunos casos los indicadores sufrieron una depuración en diferencias para que el robot pueda diferencias de manera mas correcta la lectura de los datos.
+
+Se prefirió esta manera en lugar de las señales ya que al utilizando las señales como una variable dummy se se pierda en gran manera la magnitud de los datos por lo que se prefirio utilizar diferencias de los indicadores como la forma en que se alimentara el robot.
+
+\begin{lstlisting}[language=Python]
+# Indicadores de analisis tecnico
+## Creacion del dataframe 
+Indicadores=pd.DataFrame()
+#Ponemos el precio de cierre
+Indicadores[''VIX'']=Nuevof[''Vix'']
+## Medias moviles de 30 y 100 periodos
+Indicadores[''MVS30'']=df[''Close''].rolling(window=30).mean()
+Indicadores[''MVS100'']=df[''Close''].rolling(window=100).mean()
+## Distancia entre las curvas
+Indicadores[''Distancia_MM'']=Indicadores[''MVS30'']-Indicadores[''MVS100'']
+## Rendimientos
+Indicadores[''Rendimientos'']=df[''Close''].diff(1)
+Indicadores[''Rendimientos''].dropna(inplace=True)
+## RSI
+positive=Indicadores[''Rendimientos''].copy()
+negative=Indicadores[''Rendimientos''].copy()
+positive[positive<0]=0
+negative[negative>0]=0
+days=14
+average_gain=positive.rolling(window=days).mean()
+average_loss=abs(negative.rolling(window=days).mean())
+relative_strength=average_gain/average_loss
+Indicadores[''RSI'']=100.0-(100.0/(1.0+ relative_strength))
+
+## Momentum
+Indicadores=MOM(df,50)
+
+## ROC
+Indicadores[''ROC'']=ROC(df,50)
+
+# Bandas de bollinger
+bandas=b_bands(df,26)
+Indicadores[''BB_Sup'']=bandas[''BB'']
+Indicadores[''BB_Inf'']=bandas[''Bb'']
+
+## Diferencia entre la banda y el precio de cierre
+Indicadores[''BB_Sup_dis'']=Indicadores[''BB_Sup'']- df[''Close'']
+Indicadores[''BB_Inf_dis'']=Indicadores[''BB_Inf'']- df[''Close'']
+
+## MACD
+
+#Media movil exponencial
+ShortEMA=df.Close.ewm(span=12,adjust=False).mean()
+LongEMA=df.Close.ewm(span=26,adjust=False).mean()
+MACD= ShortEMA - LongEMA
+Senal_MACD=MACD.ewm(span=9,adjust=False).mean()
+Indicadores[''MACD'']=MACD
+Indicadores[''MACD_Indicador'']=Senal_MACD
+Indicadores[''MACD_Distancia'']=MACD-Senal_MACD
+
+## ADX
+dsdd=ADX(df,14,14)
+
+Indicadores[''ADX'']=dsdd[''ADX'']
+Indicadores[''pDI'']=dsdd[''pDI'']
+Indicadores[''nDI'']=dsdd[''nDI'']
+Indicadores[''ADX_ponderado'']=(dsdd[''pDI'']-dsdd[''nDI''])*dsdd[''ADX'']
+
+## Sar parabolico
+dasdasdas=psar(df)
+sadsew3=pd.DataFrame(dasdasdas)
+sadsew3[''Ind'']=df.index
+sadsew3.set_index(''Ind'',inplace = True)
+Indicadores[''SAR'']=sadsew3[''psar'']
+Indicadores[''SAR_bear'']=sadsew3[''psarbear'']
+Indicadores[''SAR_bull'']=sadsew3[''psarbull'']
+\end{lstlisting}
+
+Lo que el robot intentara predecir sera una tendencia al alza del activo de manera que se tendra que construir una función de tendencia por 3 periodos.
+
+De manera que:
+
+\[Price\_rise=Ticker<Ticker_{t+1}<Ticker_{t+2}<Ticker_{t+3}=1 \]
+
+En el caso de que esta codición no se cumpla se imprimirá un cero.
+
+
+El objetivo del robot sera predecir en que momento nos podríamos encontrar con una tendencia al alza con anticipación de acuerdo al histórico de indicadores de análisis técnicos y a la volatilidad en el mercado.
+Para esto se se separara la base en dos fracciones una de testeo y una prueba para llegar a resultados mas concluyentes
+
+\begin{lstlisting}[language=Python]
+# Red Neuronal
+# Creacion de una variable binaria de si el precio crece o disminuye
+#NOTA: ES NECASARIO HACER UN AJUSTE PARA IDENTIFICAR 
+#TENDENCIAS EN UN INTERFVALO DE 3 PERIODOS ALMENOS
+Indicadores['Price_Rise'] = np.where((df['Close'].shift(-1) > df['Close'])&
+(df['Close'].shift(-2) >df['Close'].shift(-1))&
+(df['Close'].shift(-3) >df['Close'].shift(-2)) , 1, 0)
+Red_neuronal=Indicadores.iloc[:,0:-3]
+Red_neuronal[''Price_Rise'']=Indicadores[''Price_Rise'']
+# Borramos valores faltantes
+Red_neuronal=Red_neuronal.dropna()
+# Definimos x y y
+X = Red_neuronal.iloc[:, 0:-1]
+y = Red_neuronal.iloc[:, -1]
+# ponemos variables para que entrene el modelo y de prueba
+split = int(len(Red_neuronal)*0.8)
+X_train, X_test, y_train, y_test = X[:split], X[split:], 
+y[:split], y[split:]
+
+
+
+# Normalizamos los datos
+from sklearn.preprocessing import StandardScaler
+sc = StandardScaler()
+X_train = sc.fit_transform(X_train)
+X_test = sc.fit_transform(X_test)
+\end{lstlisting}
+
+El modelo que se utilizara sera una red neuronal de doble capa con 128 neuronal cada una\footnote{Valdría la pena hacer pruebas entre la creación de mas capas y el poder variar el numero de neuronas por capas.} y una función de repetición de aprendizaje de 100 periodos. Ya que nuestra variable explicativa es binaria se utilizara un algoritmo de clasificación y el resultado se dará en probabilidades de obtener una tendencia alcista para ello se utilizo la libreria de \textbf{Keras} pero tambien se podria utilizar \textbf{TensorFlow} si se tiene los conocimientos suficientes.
+
+
+
+
+\begin{lstlisting}[language=Python]
+# Librerias para red neuronal
+from keras.models import Sequential
+from keras.layers import Dense
+from keras.layers import Dropout
+
+
+#Definimos como sera la red
+classifier = Sequential()
+classifier.add(Dense(units = 128, kernel_initializer = 'uniform',
+ activation = 'relu', input_dim = X.shape[1]))
+classifier.add(Dense(units = 128, kernel_initializer = 'uniform',
+ activation = 'relu'))
+classifier.add(Dense(units = 1, kernel_initializer = 'uniform', 
+activation = 'sigmoid'))
+classifier.compile(optimizer = 'adam', loss = 'mean_squared_error',
+ metrics = ['accuracy'])
+#Entrenamiento de la red
+print(''******--- Entrenamiento de la red neuronal ------*******'')
+classifier.fit(X_train, y_train, batch_size = 10, epochs = 100)
+#Prediccion nuestra base de testeo
+y_pred0 = classifier.predict(X_test)
+y_pred = (y_pred0 > 0.9)
+# Prediccion del ultimo valor de nuestra base de datos
+X_final = Red_neuronal.iloc[-1, 0:-1]
+X_final=X_final.to_numpy()
+X_final=X_final.reshape(1,-1)
+#Red_neuronal.tail()
+#Red_neuronal.iloc[-1, 0:-1]
+X_final=sc.fit_transform(X_final)
+Prediccion_compra_ultimo_dato = classifier.predict(X_final)
+
+Nivel_de_confianza.append(Prediccion_compra_ultimo_dato)
+Ticketss.append(ticker)
+
+\end{lstlisting}
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[ height=8cm]{Images/Redes.jpg}
+	\caption{Redes neuronales trabajando.}
+\end{figure}
+
+El robot nos arrojara para cada ticker la probabilidad de la existencia de una tendencia al alza para el día siguiente considerando los indicadores técnicos disponibles hasta ese momento.
+
+\begin{lstlisting}[language=Python]
+df_tickets=pd.DataFrame(Ticketss,columns=[''Nombre''])
+b=np.array(Nivel_de_confianza) 
+Tamano=len(Nivel_de_confianza)
+c=b.reshape(Tamano,1)
+df_tickets[''Confianza'']=pd.DataFrame(c)
+df_tickets
+\end{lstlisting}
+
+Esto se vera reflejado en una gráfico que ordenara los tickers de mayor a menor probabilidad de que exista una tendencia alcista.\footnote{Para fines de la investigación se dejo el grafico como resultado general sin embargo, también se utilizaron librerías para mandar correos o realizar comprar de activos en el momento en que la probabilidad alcista del activo rebasara el 90\% se excluyo ya que  esto no esta disponible para fines académicos }
+
+\begin{lstlisting}[language=Python]
+De_mayor_a_menor = df_tickets.sort_values('Confianza',ascending=False)
+De_mayor_a_menor
+plt.figure(figsize=(50, 8))
+plt.bar(De_mayor_a_menor[''Nombre''], De_mayor_a_menor[''Confianza''])
+plt.title('Probabilidad de una tendencia alcista')
+plt.xlabel('Activos')
+plt.ylabel('Probabilidad')
+plt.show()
+\end{lstlisting}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[ height=8cm]{Images/Figure_1.png}
+	\caption{Probabilidades.}
+\end{figure}
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[ height=8cm]{Images/Figure_2.png}
+	\caption{Probabilidades.}
+\end{figure}
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[ height=8cm]{Images/Figure_3.png}
+	\caption{Probabilidades.}
+\end{figure}
+
+
+\chapter{Conclusiones}
+
+
+Para cada uno de los activos el nivel de precisión se mantuvo dentro de una media del 91\% con una caída máxima a 86\% y el nivel mas alto de 96\% por lo que el robot se ajusta y hace un buen trabajo para hacer predicciones sobre la tendencia futura de un activo.
+\vspace{0.5cm}
+
+
+Sin embargo, se debe de tomar los resultados con cautela ya que si bien se utilizo la teoría de los mercado eficientes como fundamento para esta investigación empíricamente puedo decir que hay momentos en donde esta condición no se cumple en el mercado por la irracionalidad de los agentes y por situaciones coyunturales que están fuera de poderse predecir con los precios de los activo, una guerra , afectaciones climáticas, elecciones gubernamentales, regulaciones, etc.
+\vspace{0.5cm}
+
+
+No obstante la utilizaciones de herramientas como las redes neuronales para el pronostico de tendencias en los activos financieros se ha demostrado que es hasta cierto punto eficaz y podría ser una forma de computar y analizar información financiera de una forma relativamente económica por lo que se reduce el problema de la asimetria en la información por concepto de costos y de volumen de análisis.
+\vspace{0.5cm}
+
+
+No obstante el problema ahora recae en las habilidades técnicas que se requieren parea poder construir este tipo de modelos que se retroalimentan.
+\vspace{0.5cm}
+
+
+Se propone para futuros proyectos poder utilizar aun modelos mas complejos como lo son las redes neuronales convoluciones o técnicas mixtas de machine learnig, la variación de neuronas y épocas de aprendizaje para poder comparar resultados de eficiencia y la utilización de otros indicadores mas especializados para la alimentación de la red.
+
+
+
+\bibliographystyle{apacite}
+\bibliography{Referencias.bib}
+
+\end{document}
+
